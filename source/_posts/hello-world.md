@@ -1,9 +1,9 @@
 ---
 title: Hello World
 ---
-#this is my hello-world
+# this is my hello-world
 
-
+<!-- more -->
 
 ## Quick Start
 
