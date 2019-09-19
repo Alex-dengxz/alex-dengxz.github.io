@@ -112,9 +112,10 @@ analytics: # 统计系统，目前支持 Google analytics.js 统计、Google Tag
 comment: gitalk # 评论框，目前支持 gitalk,gitment,valine,disqus,disqusjs,changyan,livere,DiscussBot
 
 gitalk:
+  createIssueManually: false
   admin: alex-dengxz # 拥有对该repo进行操作的 GitHub username
   owner: alex-dengxz # 持有该 repo 的 GitHub username
-  repo: alex-dengxz/alex-dengxz.github.io # 存放评论的 issue 所在的 repo
+  repo: alex-dengxz.github.io # 存放评论的 issue 所在的 repo
   clientID: 3e3e075344149f9b7c07 # GitHub Client ID
   clientSecret: 2b4d0bac9c8b42cd89ea9e095f9c7ec0d54c945c # GitHub Client Secret
 
