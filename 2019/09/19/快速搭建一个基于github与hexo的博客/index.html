@@ -20,7 +20,7 @@
 <meta property="og:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png">
-<meta property="og:updated_time" content="2019-09-20T21:13:54.790Z">
+<meta property="og:updated_time" content="2019-09-20T21:33:21.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速搭建一个基于github+hexo的博客">
 <meta name="twitter:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
@@ -32,7 +32,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1569014078962">
+  <link rel="stylesheet" href="/css/style.css?v=1569015206147">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -171,8 +171,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年09月19日</a>
-    <a><i class="nexmoefont icon-areachart"></i>719 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>916 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/博客/">博客</a>
     
@@ -213,7 +213,7 @@ hexo g</code></pre>
 <p>但是你并不能在其他的网络中访问到这个博客页面，因此，你需要github来作为你的服务器。</p>
 <h2 id="4-使用GitHub-page-部署"><a href="#4-使用GitHub-page-部署" class="headerlink" title="4 使用GitHub page 部署"></a>4 使用GitHub page 部署</h2><h3 id="4-1-创建库"><a href="#4-1-创建库" class="headerlink" title="4.1 创建库"></a>4.1 创建库</h3><p>首先，登录你的GitHub账号，新建一个库，命名为XXX.github.io</p>
 <p><strong>⚠️：这里的XXX是你的GitHub username，这个库名必须按照这个格式，且必须为新建库（不能更改库名）</strong></p>
-<p>当你启用GitHub page功能时，GitHub会为你分配一个XXX.github.io的域名，为了防止被滥用，因此每个用户只能根据用户名创建一个page，并且如果更改了github username，这个域名也就失效了。</p>
+<p>当你启用GitHub page功能时，GitHub会为你分配一个XXX.github.io的域名，为了防止被滥用，因此每个用户只能根据用户名创建一个page（事实上，你确实可以创建任意多且任意名称的库并开启github page，但是因为你只能有一个个人页面，其他的所有都只能作为项目主页，你需要为项目主页准备一个单独的域名才能使用它)，并且如果更改了github username，这个域名也就失效了。</p>
 <h3 id="4-2-本地配置"><a href="#4-2-本地配置" class="headerlink" title="4.2 本地配置"></a>4.2 本地配置</h3><p>首先安装 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a></p>
 <pre><code class="bash">npm install hexo-deployer-git --save</code></pre>
 <p>然后进入 XXX.github.io 文件夹，找到 <em>_config.yml</em> 并编辑</p>
@@ -226,7 +226,9 @@ hexo g</code></pre>
 </blockquote>
 <h3 id="4-3-部署"><a href="#4-3-部署" class="headerlink" title="4.3 部署"></a>4.3 部署</h3><p>退出编辑后在 <em>XXX.github.io</em> 文件夹中执行：</p>
 <pre><code class="bash">hexo d</code></pre>
-<p><em>hexo d</em> 是 <em>hexo deploy(部署)</em> 的缩写，执行之后，hexo 会将之前 <em>hexo g</em> 生成的静态页面给上传到你GitHub的 <em>XXX.github.io</em> 库的<em>master</em>分支中，GitHub page只只支持<em>master</em>分支，因此不要上传到其他分支。</p>
+<p><em>hexo d</em> 是 <em>hexo deploy(部署)</em> 的缩写，执行之后，hexo 会将之前 <em>hexo g</em> 生成的静态页面给上传到你GitHub的 <em>XXX.github.io</em> 库的<em>master</em>分支中，GitHub page只只支持<em>master</em>分支和其他少数几个分支，因此不要上传到其他分支。</p>
+<h3 id="4-4-开启github-page-及绑定域名"><a href="#4-4-开启github-page-及绑定域名" class="headerlink" title="4.4 开启github page 及绑定域名"></a>4.4 开启github page 及绑定域名</h3><p>在github中进入XXX.github.io库进行管理，在设置中，向下划到倒数第二大类：github page 中，在Source中选中 <em>master branch</em> ，如果你有域名，只需要在下面的 Custom domain中输入属于你的域名并保存，github就会自动为你的域名设置解析。</p>
+<p>部分情况下，需要手动到域名提供商进行域名的dns解析设置。</p>
 
   </article>
   
@@ -276,7 +278,7 @@ hexo g</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1569014078968"></script>
+<script src="/js/app.js?v=1569015206154"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
