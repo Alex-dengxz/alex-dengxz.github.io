@@ -97,7 +97,7 @@ hexo s
 
 **⚠️：这里的XXX是你的GitHub username，这个库名必须按照这个格式，且必须为新建库（不能更改库名）**
 
-当你启用GitHub page功能时，GitHub会为你分配一个XXX.github.io的域名，为了防止被滥用，因此每个用户只能根据用户名创建一个page，并且如果更改了github username，这个域名也就失效了。
+当你启用GitHub page功能时，GitHub会为你分配一个XXX.github.io的域名，为了防止被滥用，因此每个用户只能根据用户名创建一个page（事实上，你确实可以创建任意多且任意名称的库并开启github page，但是因为你只能有一个个人页面，其他的所有都只能作为项目主页，你需要为项目主页准备一个单独的域名才能使用它)，并且如果更改了github username，这个域名也就失效了。
 
 ### 4.2 本地配置
 
@@ -127,5 +127,11 @@ deploy:
 hexo d
 ```
 
-*hexo d* 是 *hexo deploy(部署)* 的缩写，执行之后，hexo 会将之前 *hexo g* 生成的静态页面给上传到你GitHub的 *XXX.github.io* 库的*master*分支中，GitHub page只只支持*master*分支，因此不要上传到其他分支。
+*hexo d* 是 *hexo deploy(部署)* 的缩写，执行之后，hexo 会将之前 *hexo g* 生成的静态页面给上传到你GitHub的 *XXX.github.io* 库的*master*分支中，GitHub page只只支持*master*分支和其他少数几个分支，因此不要上传到其他分支。
+
+### 4.4 开启github page 及绑定域名
+
+在github中进入XXX.github.io库进行管理，在设置中，向下划到倒数第二大类：github page 中，在Source中选中 *master branch* ，如果你有域名，只需要在下面的 Custom domain中输入属于你的域名并保存，github就会自动为你的域名设置解析。
+
+部分情况下，需要手动到域名提供商进行域名的dns解析设置。
 
