@@ -83,5 +83,49 @@ hexo s
 
 *hero s* 是 *hexo server* 的缩写，通过这行指令，可以在本地搭建一个临时服务器，默认情况下，访问网址为： `http://localhost:4000/`。
 
+此时访问应该可以看到如下画面：
 
+![hexo-s.png](https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png)
+
+但是你并不能在其他的网络中访问到这个博客页面，因此，你需要github来作为你的服务器。
+
+## 4 使用GitHub page 部署
+
+### 4.1 创建库
+
+首先，登录你的GitHub账号，新建一个库，命名为XXX.github.io
+
+**⚠️：这里的XXX是你的GitHub username，这个库名必须按照这个格式，且必须为新建库（不能更改库名）**
+
+当你启用GitHub page功能时，GitHub会为你分配一个XXX.github.io的域名，为了防止被滥用，因此每个用户只能根据用户名创建一个page，并且如果更改了github username，这个域名也就失效了。
+
+### 4.2 本地配置
+
+首先安装 [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)
+
+```bash
+npm install hexo-deployer-git --save
+```
+
+然后进入 XXX.github.io 文件夹，找到 *_config.yml* 并编辑
+
+在其中的deploy一项中进行更改：
+
+```bash
+deploy:
+	type: git
+	repo: [repo]
+```
+
+>[repo]替换为https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub username
+
+### 4.3 部署
+
+退出编辑后在 *XXX.github.io* 文件夹中执行：
+
+```bash
+hexo d
+```
+
+*hexo d* 是 *hexo deploy(部署)* 的缩写，执行之后，hexo 会将之前 *hexo g* 生成的静态页面给上传到你GitHub的 *XXX.github.io* 库的*master*分支中，GitHub page只只支持*master*分支，因此不要上传到其他分支。
 
