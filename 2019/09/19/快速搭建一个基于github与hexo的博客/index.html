@@ -20,7 +20,7 @@
 <meta property="og:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png">
-<meta property="og:updated_time" content="2019-09-20T21:33:21.250Z">
+<meta property="og:updated_time" content="2019-09-21T04:52:27.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速搭建一个基于github+hexo的博客">
 <meta name="twitter:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
@@ -32,7 +32,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1569015206147">
+  <link rel="stylesheet" href="/css/style.css?v=1569041558453">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -171,8 +171,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年09月19日</a>
-    <a><i class="nexmoefont icon-areachart"></i>916 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.8k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/博客/">博客</a>
     
@@ -184,6 +184,7 @@
     <p>通过github和hexo，快速搭建一个属于自己的个人博客</p>
 <a id="more"></a>
 
+<p>[TOC]</p>
 <h2 id="1-什么是Hexo"><a href="#1-什么是Hexo" class="headerlink" title="1 什么是Hexo"></a>1 什么是Hexo</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析文章，通过配置的主题快速部署属于你的静态网站。</p>
 <h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2 安装Hexo"></a>2 安装Hexo</h2><h3 id="2-1-安装Hexo-之前："><a href="#2-1-安装Hexo-之前：" class="headerlink" title="2.1 安装Hexo 之前："></a>2.1 安装Hexo 之前：</h3><p>安装node:</p>
 <p>macOS下：</p>
@@ -202,6 +203,7 @@ npm install</code></pre>
 <p>将其中的XXX替换为你的github username</p>
 <p>当然 <em>XXX.github.io</em> 只是代表要生成的文件夹，也可以命名为其他名字，不过建议如此。</p>
 <p>现在，在你的 <em>~/</em> 目录下就多了一个 <em>XXX.github.io</em> 的文件夹了，这个目录中就装着你关于个人主页的配置。</p>
+<p>[查看目录结构](#7.3 主题配置)</p>
 <h3 id="3-2-第一次生成静态页面"><a href="#3-2-第一次生成静态页面" class="headerlink" title="3.2 第一次生成静态页面"></a>3.2 第一次生成静态页面</h3><p>现在你并没有拥有一个博客页面，只有当你通过Hexo生成一个静态页面后，你才能拥有一个初始的博客页面。</p>
 <pre><code class="bash">hexo clean
 hexo g</code></pre>
@@ -223,12 +225,83 @@ hexo g</code></pre>
     repo: [repo]</code></pre>
 <blockquote>
 <p>[repo]替换为<a href="https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub" target="_blank" rel="noopener">https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub</a> username</p>
+<p><strong>⚠️：冒号(:)后一定要跟一个空格</strong></p>
 </blockquote>
 <h3 id="4-3-部署"><a href="#4-3-部署" class="headerlink" title="4.3 部署"></a>4.3 部署</h3><p>退出编辑后在 <em>XXX.github.io</em> 文件夹中执行：</p>
 <pre><code class="bash">hexo d</code></pre>
 <p><em>hexo d</em> 是 <em>hexo deploy(部署)</em> 的缩写，执行之后，hexo 会将之前 <em>hexo g</em> 生成的静态页面给上传到你GitHub的 <em>XXX.github.io</em> 库的<em>master</em>分支中，GitHub page只只支持<em>master</em>分支和其他少数几个分支，因此不要上传到其他分支。</p>
 <h3 id="4-4-开启github-page-及绑定域名"><a href="#4-4-开启github-page-及绑定域名" class="headerlink" title="4.4 开启github page 及绑定域名"></a>4.4 开启github page 及绑定域名</h3><p>在github中进入XXX.github.io库进行管理，在设置中，向下划到倒数第二大类：github page 中，在Source中选中 <em>master branch</em> ，如果你有域名，只需要在下面的 Custom domain中输入属于你的域名并保存，github就会自动为你的域名设置解析。</p>
 <p>部分情况下，需要手动到域名提供商进行域名的dns解析设置。</p>
+<p>到现在，你就可以在<em>XXX.github.io</em>访问到初始的博客页面了。</p>
+<h2 id="5-发布文章"><a href="#5-发布文章" class="headerlink" title="5 发布文章"></a>5 发布文章</h2><p>有两种方式可以为你的博客新增文章，</p>
+<pre><code class="bash">hexo new [article]</code></pre>
+<p>或者直接在你的 <em>~/XXX.github.io/source/_posts</em> 文件夹中新建名字为<em>article.md</em>的文件。</p>
+<p>之后只要用markdown语法来完成你的文章就好了。</p>
+<p>不过发布了之后，别忘了在完成编辑后执行hexo命令：</p>
+<pre><code class="bash">hexo clean
+hexo g
+hexo d</code></pre>
+<p>当你发布之后，如果你刷新网页没有变化，可能是你本地的浏览器缓存问题，清除浏览器缓存就好了。</p>
+<h2 id="6-配置"><a href="#6-配置" class="headerlink" title="6 配置"></a>6 配置</h2><p>你可以在<em>_config.yml*中修改Hexo为你预设的博客属性，或者你也可以在</em>~/XXX.github.io/themes/[themename]/中更近一步修改你的博客布局。</p>
+<p>部分<em>_config.yml</em>中的设置会被你的主题中的设置所覆盖，具体需要阅读<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">Hexo官方文档</a>与对应的主题文档。</p>
+<blockquote>
+<p><strong>⚠️：冒号(:)后一定要跟一个空格</strong>，否则会在<code>hexo g</code>时报错</p>
+</blockquote>
+<p>以下是一些 <em>_config.yml</em> 比较重要的设置项</p>
+<h3 id="6-1-Site"><a href="#6-1-Site" class="headerlink" title="6.1 Site"></a>6.1 Site</h3><pre><code class="bash">title:              #标题
+subtitle:           #副标题
+description:        #描述，用于搜索引擎检索
+keywords:           #关键字，用于搜索引擎检索
+author:             #作者昵称
+language:           #简体中文zh-Hans 默认为英文en
+timezone:           #通常情况下可以省略（hexo默认以你本地市区作为博客时区)</code></pre>
+<h3 id="6-2-URL"><a href="#6-2-URL" class="headerlink" title="6.2 URL"></a>6.2 URL</h3><pre><code class="bash">url:                                    #网站网址，有域名天蝎域名
+root: /                                 #文章根目录
+permalink: :year/:month/:day/:title/    #博客自页面链接格式
+permalink_defaults:                     #永久链接中每个段的默认值</code></pre>
+<h3 id="6-3-Extensions"><a href="#6-3-Extensions" class="headerlink" title="6.3 Extensions"></a>6.3 Extensions</h3><pre><code class="bash">theme:              #默认为landscape,之后更改为你所要替换的主题名，</code></pre>
+<h2 id="7-主题"><a href="#7-主题" class="headerlink" title="7 主题"></a>7 主题</h2><p>现在你的博客已经可以成功的上传文章并访问了，但是，你是不是觉得太过于单调又丑陋了一些呢？那么，为你的博客替换一个主题就很重要了。</p>
+<h3 id="7-1-寻找主题"><a href="#7-1-寻找主题" class="headerlink" title="7.1 寻找主题"></a>7.1 寻找主题</h3><p><strong>推荐：</strong>你可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方页面</a>中挑选你所想要的主题。</p>
+<p>也可以在搜索引擎中查找主题，大部分的主题都是保存在github下的，因此，在github中搜索hexo theme也是一个不错的方法。</p>
+<h3 id="7-2-安装主题"><a href="#7-2-安装主题" class="headerlink" title="7.2 安装主题"></a>7.2 安装主题</h3><p>进入主题的github页面，然后将其克隆到本地的 <em>~/XXX.github.io/themes/</em> 中，注意，大部分的主题以 <em>hexo-theme-name</em> 格式命名，你在克隆时需要改名为<em>name</em>.</p>
+<p>现在，在你的themes文件夹中就会多一个主题文件夹了，当你在<em>_config.yml</em>中将theme更改为当前主题名，就启用了这个主题。</p>
+<h3 id="7-3-主题配置"><a href="#7-3-主题配置" class="headerlink" title="7.3 主题配置"></a>7.3 主题配置</h3><p>首先介绍一下hexo的配置：</p>
+<pre><code class="bash">.
+│   _config.yml                 #官方配置文件
+│   package-lock.json           #包依赖
+│   package.json                #包依赖
+│    
+└───node_modules
+│   │ 
+│   ...
+│
+└───scaffolds                   #默认的文章生成前缀
+│   │
+│   │   draft.md               
+│   │   page.md
+│   │   post.md                 #hexo new默认生成post文章
+│
+└───source                      #博客的内容
+│   │
+│   └───_posts                  #文章存放位置
+│   └───_images                 #自行添加，存放图片
+│   
+└───themes                      #主题文件夹
+    │
+    └───landscape               #默认主题，这里用来举例
+    │   │
+    │   │   _config.yml         #主题配置文件，会替换掉官方配置对应项
+    │   │
+    │   └───layout              #配置博客布局的脚本
+    │   └───source              #存放css和js配置文件
+    │         │
+    │         └───css
+    │         └───js
+    └───theme_name              #其他主题文件夹
+</code></pre>
+<p>这其中最重要的两个配置文件就是</p>
+<p><code>~/XXX.github.io/_config.yml</code>和<code>~/XXX.github.io/themes/theme_name/_config.yml</code></p>
+<p>分别代表全局配置和主题配置，其中主题配置的优先级更高。</p>
 
   </article>
   
@@ -278,7 +351,7 @@ hexo g</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1569015206154"></script>
+<script src="/js/app.js?v=1569041558462"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
