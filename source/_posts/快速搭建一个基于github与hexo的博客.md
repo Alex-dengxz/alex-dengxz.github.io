@@ -8,6 +8,8 @@ tags: [博客,编程]
 通过github和hexo，快速搭建一个属于自己的个人博客
 <!-- more -->
 
+[TOC]
+
 ## 1 什么是Hexo
 
 Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析文章，通过配置的主题快速部署属于你的静态网站。
@@ -64,6 +66,8 @@ npm install
 
 现在，在你的 *~/* 目录下就多了一个 *XXX.github.io* 的文件夹了，这个目录中就装着你关于个人主页的配置。
 
+[查看目录结构](#7.3 主题配置)
+
 ### 3.2 第一次生成静态页面
 
 现在你并没有拥有一个博客页面，只有当你通过Hexo生成一个静态页面后，你才能拥有一个初始的博客页面。
@@ -118,6 +122,8 @@ deploy:
 ```
 
 >[repo]替换为https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub username
+>
+>**⚠️：冒号(:)后一定要跟一个空格**
 
 ### 4.3 部署
 
@@ -135,3 +141,125 @@ hexo d
 
 部分情况下，需要手动到域名提供商进行域名的dns解析设置。
 
+到现在，你就可以在*XXX.github.io*访问到初始的博客页面了。
+
+## 5 发布文章
+
+有两种方式可以为你的博客新增文章，
+
+```bash
+hexo new [article]
+```
+
+或者直接在你的 *~/XXX.github.io/source/_posts* 文件夹中新建名字为*article.md*的文件。
+
+之后只要用markdown语法来完成你的文章就好了。
+
+不过发布了之后，别忘了在完成编辑后执行hexo命令：
+
+```bash
+hexo clean
+hexo g
+hexo d
+```
+
+当你发布之后，如果你刷新网页没有变化，可能是你本地的浏览器缓存问题，清除浏览器缓存就好了。
+
+## 6 配置
+
+你可以在*_config.yml*中修改Hexo为你预设的博客属性，或者你也可以在*~/XXX.github.io/themes/[themename]/中更近一步修改你的博客布局。
+
+部分*_config.yml*中的设置会被你的主题中的设置所覆盖，具体需要阅读[Hexo官方文档](https://hexo.io/zh-cn/docs/configuration.html)与对应的主题文档。
+
+> **⚠️：冒号(:)后一定要跟一个空格**，否则会在`hexo g`时报错
+
+以下是一些 *_config.yml* 比较重要的设置项
+
+### 6.1 Site
+
+```bash
+title:              #标题
+subtitle:           #副标题
+description:        #描述，用于搜索引擎检索
+keywords:           #关键字，用于搜索引擎检索
+author:             #作者昵称
+language:           #简体中文zh-Hans 默认为英文en
+timezone:           #通常情况下可以省略（hexo默认以你本地市区作为博客时区)
+```
+
+### 6.2 URL
+
+```bash
+url:                                    #网站网址，有域名天蝎域名
+root: /                                 #文章根目录
+permalink: :year/:month/:day/:title/    #博客自页面链接格式
+permalink_defaults:                     #永久链接中每个段的默认值
+```
+
+### 6.3 Extensions
+
+```bash
+theme:              #默认为landscape,之后更改为你所要替换的主题名，
+```
+
+## 7 主题
+
+现在你的博客已经可以成功的上传文章并访问了，但是，你是不是觉得太过于单调又丑陋了一些呢？那么，为你的博客替换一个主题就很重要了。
+
+### 7.1 寻找主题
+
+**推荐：**你可以在[官方页面](https://hexo.io/themes/)中挑选你所想要的主题。
+
+也可以在搜索引擎中查找主题，大部分的主题都是保存在github下的，因此，在github中搜索hexo theme也是一个不错的方法。
+
+### 7.2 安装主题
+
+进入主题的github页面，然后将其克隆到本地的 *~/XXX.github.io/themes/* 中，注意，大部分的主题以 *hexo-theme-name* 格式命名，你在克隆时需要改名为*name*.
+
+现在，在你的themes文件夹中就会多一个主题文件夹了，当你在*_config.yml*中将theme更改为当前主题名，就启用了这个主题。
+
+### 7.3 主题配置
+
+首先介绍一下hexo的配置：
+
+```bash
+.
+│   _config.yml                 #官方配置文件
+│   package-lock.json           #包依赖
+│   package.json                #包依赖
+│	
+└───node_modules
+│   │ 
+│   ...
+│
+└───scaffolds                   #默认的文章生成前缀
+│   │
+│   │   draft.md               
+│   │   page.md
+│   │   post.md                 #hexo new默认生成post文章
+│
+└───source                      #博客的内容
+│   │
+│   └───_posts                  #文章存放位置
+│   └───_images                 #自行添加，存放图片
+│   
+└───themes                      #主题文件夹
+    │
+    └───landscape               #默认主题，这里用来举例
+    │   │
+    │   │   _config.yml         #主题配置文件，会替换掉官方配置对应项
+    │   │
+    │   └───layout              #配置博客布局的脚本
+    │   └───source              #存放css和js配置文件
+    │         │
+    │         └───css
+    │         └───js
+    └───theme_name              #其他主题文件夹
+    
+```
+
+这其中最重要的两个配置文件就是
+
+`~/XXX.github.io/_config.yml`和`~/XXX.github.io/themes/theme_name/_config.yml`
+
+分别代表全局配置和主题配置，其中主题配置的优先级更高。
