@@ -6,5 +6,5 @@ permalink: PY.html
 ---
 
 - [![CiYou](https://ciyou.me/images/avatar.jpg)](https://ciyou.me/ "CiYou")
-- [![kevincible](https://kevincible.top/images/avatar.jpg)](https://kevincible.top/ "CiYou")
+- [![kevincible](https://kevincible.top/images/avatar.jpg)](https://kevincible.top/ "kevincible")
 

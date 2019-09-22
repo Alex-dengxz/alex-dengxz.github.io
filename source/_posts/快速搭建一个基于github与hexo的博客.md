@@ -8,8 +8,6 @@ tags: [博客,编程]
 通过github和hexo，快速搭建一个属于自己的个人博客
 <!-- more -->
 
-[TOC]
-
 ## 1 什么是Hexo
 
 Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析文章，通过配置的主题快速部署属于你的静态网站。
@@ -206,11 +204,17 @@ theme:              #默认为landscape,之后更改为你所要替换的主题�
 
 现在你的博客已经可以成功的上传文章并访问了，但是，你是不是觉得太过于单调又丑陋了一些呢？那么，为你的博客替换一个主题就很重要了。
 
+我的主题是：[nexmoe](https://github.com/nexmoe/hexo-theme-nexmoe)
+
+我也曾用过:  [icarus](https://github.com/ppoffice/hexo-theme-icarus)
+
 ### 7.1 寻找主题
 
-**推荐：**你可以在[官方页面](https://hexo.io/themes/)中挑选你所想要的主题。
+**推荐：**你可以在[官方页面](https://hexo.io/themes/)中挑选你所想要的主题。(上述两者也都可以在官方页面中找到)
 
 也可以在搜索引擎中查找主题，大部分的主题都是保存在github下的，因此，在github中搜索hexo theme也是一个不错的方法。
+
+还有一种方法：当你身边有朋友在使用hexo时，通常可以在他的博客底部看到一行：Powered by Hexo & Themename, 这时你就可以选择一个和你朋友相同的主题了。
 
 ### 7.2 安装主题
 
@@ -263,3 +267,44 @@ theme:              #默认为landscape,之后更改为你所要替换的主题�
 `~/XXX.github.io/_config.yml`和`~/XXX.github.io/themes/theme_name/_config.yml`
 
 分别代表全局配置和主题配置，其中主题配置的优先级更高。
+
+要配置主题请仔细阅读主题相关文档，本博客采用[nexmoe](https://github.com/nexmoe/hexo-theme-nexmoe)主题，不会在本文中介绍nexmoe的配置，后续应该会写一篇更深度定制化的博客文章。
+
+## 8 备份
+
+
+
+## 9 其他
+
+### 9.1 保存域名
+
+在你完成上述操作并更新一次后，你会发现：你无法通过你的域名访问你的博客了，这是怎么回事？
+
+原来，在你更新后，GitHub Pages 解除了和域名的绑定，你当然可以每次更新后都重复[4.4 绑定域名](#4.4 开启github page 及绑定域名)的操作，但是这样太过沙雕。
+
+想要一次解决，只需要在 *~/XXX.github.io/source/* 中添加一个名字为 *CNAME* 的文档，内容为你的域名地址就好了。
+
+### 9.2 一键更新
+
+是不是觉得每次更新博客都非常麻烦，要是输指令的顺序错了，还可能有不好的后果，那么，写一个脚本来一键完成这个步骤就非常适合你了。
+
+在任意地方（推荐 *~/XXX.github.io/* 中）创建一个update.sh的文件
+
+```bash
+#!/bin/bash
+
+hexo clean
+hexo g
+hexo d
+git add .
+git commit -m "Backup"
+git push origin hexo
+```
+
+保存后为文件添加执行权限：
+
+```bash
+chmod 777 ./update.sh
+```
+
+然后以后的每次更新就可一通过：`~/XXX.github.io/update.sh`来执行了。
