@@ -5,5 +5,6 @@ layout: py
 permalink: PY.html
 ---
 
-- [![轻惋导航](https://www.chainwon.com/static/logo.png)](https://www.chainwon.com/ "轻惋导航")
-- [![CiYou's blog](https://ciyou.me/images/avatar.jpg)](https://ciyou.me/ "CiYou's blog")
+- [![CiYou](https://ciyou.me/images/avatar.jpg)](https://ciyou.me/ "CiYou's blog")
+- [![kevincible](https://kevincible.top/images/avatar.jpg)](https://kevincible.top/)
+
