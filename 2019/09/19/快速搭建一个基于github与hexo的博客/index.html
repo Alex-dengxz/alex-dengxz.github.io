@@ -20,7 +20,7 @@
 <meta property="og:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png">
-<meta property="og:updated_time" content="2019-09-22T13:57:45.243Z">
+<meta property="og:updated_time" content="2019-09-23T16:15:26.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速搭建一个基于github+hexo的博客">
 <meta name="twitter:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
@@ -32,7 +32,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1569160681525">
+  <link rel="stylesheet" href="/css/style.css?v=1569255339681">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -121,7 +121,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/博客/">博客</a>
-          <span class="category-list-count">1</span>
+          <span class="category-list-count">2</span>
         </li>
 
         
@@ -171,8 +171,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年09月19日</a>
-    <a><i class="nexmoefont icon-areachart"></i>2.2k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.7k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/博客/">博客</a>
     
@@ -305,7 +305,34 @@ permalink_defaults:                     #永久链接中每个段的默认值</c
 <p><code>~/XXX.github.io/_config.yml</code>和<code>~/XXX.github.io/themes/theme_name/_config.yml</code></p>
 <p>分别代表全局配置和主题配置，其中主题配置的优先级更高。</p>
 <p>要配置主题请仔细阅读主题相关文档，本博客采用<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener">nexmoe</a>主题，不会在本文中介绍nexmoe的配置，后续应该会写一篇更深度定制化的博客文章。</p>
-<h2 id="8-备份"><a href="#8-备份" class="headerlink" title="8 备份"></a>8 备份</h2><h2 id="9-其他"><a href="#9-其他" class="headerlink" title="9 其他"></a>9 其他</h2><h3 id="9-1-保存域名"><a href="#9-1-保存域名" class="headerlink" title="9.1 保存域名"></a>9.1 保存域名</h3><p>在你完成上述操作并更新一次后，你会发现：你无法通过你的域名访问你的博客了，这是怎么回事？</p>
+<h2 id="8-备份"><a href="#8-备份" class="headerlink" title="8 备份"></a>8 备份</h2><p>不管你的博客在哪里搭建，又一个很重要的事情就是备份。</p>
+<p>你可能会想：不是已经把博客上传到了github上吗？</p>
+<p>是的，虽然github上已经有了你的博客，但是那只是你本地生成上传的一个静态网页，而你真正的内容，还保留在你的电脑/服务器中。</p>
+<p>当然，你可以把本地文件拷贝到你的移动硬盘、云盘中，不过还有一个更好的方法：上传到github中</p>
+<h3 id="8-1-删除对主题文件夹的跟踪"><a href="#8-1-删除对主题文件夹的跟踪" class="headerlink" title="8.1 删除对主题文件夹的跟踪"></a>8.1 删除对主题文件夹的跟踪</h3><blockquote>
+<p>如果你使用的初始主题可以忽视</p>
+</blockquote>
+<p>在你的hexo文件夹下，又一个主题文件夹是从github上克隆下来的，在不取消对这个文件夹的跟踪时，想要将文件夹上传到自己的github库是一个很麻烦的事情。</p>
+<blockquote>
+<p>跟踪指的就是对文件夹保留git信息，以便于版本更新</p>
+</blockquote>
+<pre><code class="bash">cd ~/XXX.github.io/themes/themename/
+git rm --cached .</code></pre>
+<h3 id="8-2-进入新的hexo分支"><a href="#8-2-进入新的hexo分支" class="headerlink" title="8.2 进入新的hexo分支"></a>8.2 进入新的hexo分支</h3><p>在第一次上传后，本地已经存在一个<code>master</code>分支，这个分支时用来存储静态网站，而现在就要创建一个用于存储文件的hexo分支（可以任意命名）</p>
+<pre><code class="bash">git checkout -b hexo</code></pre>
+<p>你可以创建一个.gitignore来将一些不想备份的文件屏蔽。</p>
+<h3 id="8-3-开始备份"><a href="#8-3-开始备份" class="headerlink" title="8.3 开始备份"></a>8.3 开始备份</h3><pre><code class="bash">cd ~/XXX.github.io/
+git add .
+git commit -m &quot;Backup&quot;
+git push origin hexo</code></pre>
+<h3 id="8-4-设置默认分支"><a href="#8-4-设置默认分支" class="headerlink" title="8.4 设置默认分支"></a>8.4 设置默认分支</h3><p>在你上传后，github中会增加一个新的分支，但是你打开库默认显示的是你之前上传的静态页面，可以在设置中将默认分支改为hexo，这样在恢复时更加方便。</p>
+<h3 id="8-5-从备份中恢复"><a href="#8-5-从备份中恢复" class="headerlink" title="8.5 从备份中恢复"></a>8.5 从备份中恢复</h3><pre><code class="bash">git clone https://github.com/XXX/XXX.github.io
+cd XXX.github.io
+npm install hexo-cli
+npm install
+npm install hexo-deployer-git</code></pre>
+<p>这样就可以从一台新的电脑继续开始更新博客，而不用重新配置了。</p>
+<h2 id="9-其他"><a href="#9-其他" class="headerlink" title="9 其他"></a>9 其他</h2><h3 id="9-1-保存域名"><a href="#9-1-保存域名" class="headerlink" title="9.1 保存域名"></a>9.1 保存域名</h3><p>在你完成上述操作并更新一次后，你会发现：你无法通过你的域名访问你的博客了，这是怎么回事？</p>
 <p>原来，在你更新后，GitHub Pages 解除了和域名的绑定，你当然可以每次更新后都重复[4.4 绑定域名](#4.4 开启github page 及绑定域名)的操作，但是这样太过沙雕。</p>
 <p>想要一次解决，只需要在 <em>~/XXX.github.io/source/</em> 中添加一个名字为 <em>CNAME</em> 的文档，内容为你的域名地址就好了。</p>
 <h3 id="9-2-一键更新"><a href="#9-2-一键更新" class="headerlink" title="9.2 一键更新"></a>9.2 一键更新</h3><p>是不是觉得每次更新博客都非常麻烦，要是输指令的顺序错了，还可能有不好的后果，那么，写一个脚本来一键完成这个步骤就非常适合你了。</p>
@@ -370,7 +397,7 @@ git push origin hexo</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1569160681537"></script>
+<script src="/js/app.js?v=1569255339687"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
