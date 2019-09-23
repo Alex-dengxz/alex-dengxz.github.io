@@ -272,7 +272,61 @@ theme:              #默认为landscape,之后更改为你所要替换的主题�
 
 ## 8 备份
 
+不管你的博客在哪里搭建，又一个很重要的事情就是备份。
 
+你可能会想：不是已经把博客上传到了github上吗？
+
+是的，虽然github上已经有了你的博客，但是那只是你本地生成上传的一个静态网页，而你真正的内容，还保留在你的电脑/服务器中。
+
+当然，你可以把本地文件拷贝到你的移动硬盘、云盘中，不过还有一个更好的方法：上传到github中
+
+### 8.1 删除对主题文件夹的跟踪
+
+> 如果你使用的初始主题可以忽视
+
+在你的hexo文件夹下，又一个主题文件夹是从github上克隆下来的，在不取消对这个文件夹的跟踪时，想要将文件夹上传到自己的github库是一个很麻烦的事情。
+
+> 跟踪指的就是对文件夹保留git信息，以便于版本更新
+
+```bash
+cd ~/XXX.github.io/themes/themename/
+git rm --cached .
+```
+
+### 8.2 进入新的hexo分支
+
+在第一次上传后，本地已经存在一个`master`分支，这个分支时用来存储静态网站，而现在就要创建一个用于存储文件的hexo分支（可以任意命名）
+
+```bash
+git checkout -b hexo
+```
+
+你可以创建一个.gitignore来将一些不想备份的文件屏蔽。
+
+### 8.3 开始备份
+
+```bash
+cd ~/XXX.github.io/
+git add .
+git commit -m "Backup"
+git push origin hexo
+```
+
+### 8.4 设置默认分支
+
+在你上传后，github中会增加一个新的分支，但是你打开库默认显示的是你之前上传的静态页面，可以在设置中将默认分支改为hexo，这样在恢复时更加方便。
+
+### 8.5 从备份中恢复
+
+```bash
+git clone https://github.com/XXX/XXX.github.io
+cd XXX.github.io
+npm install hexo-cli
+npm install
+npm install hexo-deployer-git
+```
+
+这样就可以从一台新的电脑继续开始更新博客，而不用重新配置了。
 
 ## 9 其他
 
