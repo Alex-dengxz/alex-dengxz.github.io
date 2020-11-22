@@ -5,7 +5,7 @@ date: 2019-09-19 19:29:59
 categories: 博客
 tags: [博客,编程]
 ---
-通过github和hexo，快速搭建一个属于自己的个人博客
+**通过github和hexo，快速搭建一个属于自己的个人博客**
 <!-- more -->
 
 ## 1 什么是Hexo
@@ -14,7 +14,7 @@ Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析�
 
 ## 2 安装Hexo
 
-### 2.1 安装Hexo 之前：
+#### 2.1 安装Hexo 之前：
 
 安装node:
 
@@ -28,6 +28,7 @@ brew install node
 
 ```bash
 apt-get install node
+yum install node
 ```
 
 检验安装成功：
