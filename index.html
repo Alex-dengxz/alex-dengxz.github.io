@@ -29,7 +29,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1569395006530">
+  <link rel="stylesheet" href="/css/style.css?v=1606084339501">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -53,7 +53,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>2</div>
+        <div><span>文章</span>3</div>
         <div><span>标签</span>2</div>
         <div><span>分类</span>1</div>
     </div>
@@ -143,15 +143,16 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
     </div>
   </div>
+
 
 
   
 </aside>
     <div class="nexmoe-copyright">
-        &copy; 2019 Dengxz Alex
+        &copy; 2020 Dengxz Alex
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
     </div>
@@ -160,6 +161,67 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts" id="brand-waterfall">
+    
+    <div class="nexmoe-post">
+        <a href="/2020/11/23/swift-ios/">
+            <div class="nexmoe-post-cover mdui-ripple"> 
+                
+                    <img src="https://i.loli.net/2019/01/13/5c3aec85a4343.jpg" alt>
+                
+                <h1></h1>
+            </div>
+        </a>
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2020年11月23日</a>
+            <a><i class="nexmoefont icon-areachart"></i>369 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+            
+            
+        </div>
+        <article>
+            
+            <p>[toc]</p>
+<h1 id="从零开始学习Swift-gt-iOS"><a href="#从零开始学习Swift-gt-iOS" class="headerlink" title="从零开始学习Swift-&gt; iOS"></a>从零开始学习Swift-&gt; iOS</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文以未接触过Swift, OC, iOS开发为背景从零开始，学习Swift语法以及iOS程序开发。</p>
+<h2 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>以Hello world为例</p>
+<pre><code class="swift">import Cocoa
+//Swift基本语法
+var String = &quot;Hello World&quot;
+print(String)</code></pre>
+<h5 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h5><p>import引入OC框架或者C库.</p>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><p>单行注释:</p>
+<p>//单行注释</p>
+<p>多行注释:</p>
+<p>/*第一行注释</p>
+<p>第二行注释*/</p>
+<h5 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h5><p>Swift不要求单行语句以分号结尾,但是多条语句在一行需要分号相隔</p>
+<h5 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h5><p>略</p>
+<h5 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h5><p><strong>运算符不能跟在变量常量后</strong></p>
+<h5 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h5><p>区分大小写</p>
+<p>可以以下划线_字母开始,不能以数字开始</p>
+<p>可以使用简单Unicode字符</p>
+<p>使用关键字作为标识符,在前后添加`</p>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p><strong>Int</strong> 整数(长度与平台字长相同)</p>
+<p><strong>UInt</strong> 无符号整数(长度与平台字长相同)</p>
+<p><strong>Float Double</strong> 32位浮点数, 64位浮点数,默认使用Double</p>
+<p><strong>Bool</strong> 布尔值, 布尔常量true, false</p>
+<p><strong>String</strong> 字符串</p>
+<p><strong>Character</strong> 字符(单个字母)</p>
+<p><strong>Optional</strong> 可选类型</p>
+<h5 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h5><pre><code class="swift">typealias aliasname = Int
+var number: aliasname = 10</code></pre>
+<p>typealias关键字将aliasname(自定)设为Int类型的别名</p>
+<h5 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h5><p>var声明变量 let声明常量</p>
+<pre><code class="swift">var number1 = 10
+var number2: Int = 10
+var number3: Int
+number3 = 10
+</code></pre>
+<p>number1, number2, number3都为Int类型,值为10</p>
+<p>number1没有指定数据类型,swift会自动进行<strong>类型推断</strong>,浮点数类型的类型推断会默认为Double类型而非Float</p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2019/09/19/hexo+nexmoe主题/">
@@ -232,7 +294,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1569395006537"></script>
+<script src="/js/app.js?v=1606084339506"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
