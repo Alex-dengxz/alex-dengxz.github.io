@@ -14,7 +14,7 @@ Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析�
 
 ## 2 安装Hexo
 
-### 2.1 安装Hexo 之前：
+#### 2.1 安装Hexo 之前：
 
 安装node:
 
