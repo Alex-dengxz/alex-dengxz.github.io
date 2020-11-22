@@ -15,7 +15,10 @@ Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析�
 ## 2 安装Hexo
 
 ### 2.1 安装Hexo 之前：
+111
 #### 2.1.1 test
+222
+
 安装node:
 
 macOS下：
