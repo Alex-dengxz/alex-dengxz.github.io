@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="dengxz&#39;s blog">
 <meta property="og:description" content="从零开始学习Swift-&amp;gt; iOS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-11-23T00:39:54.902Z">
+<meta property="og:updated_time" content="2020-11-23T01:25:19.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始学习Swift-&gt; iOS">
 <meta name="twitter:description" content="从零开始学习Swift-&amp;gt; iOS">
@@ -30,7 +30,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1606092012296">
+  <link rel="stylesheet" href="/css/style.css?v=1606094735500">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -170,8 +170,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年11月23日</a>
-    <a><i class="nexmoefont icon-areachart"></i>400 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>462 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/博客/">博客</a>
     
@@ -184,36 +184,62 @@
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h1><p>本文以未接触过Swift, OC, iOS开发为背景从零开始，学习Swift语法以及iOS程序开发。</p>
-<h1 id="2-Swift"><a href="#2-Swift" class="headerlink" title="2 Swift"></a>2 Swift</h1><h2 id="2-1-基本语法"><a href="#2-1-基本语法" class="headerlink" title="2.1 基本语法"></a>2.1 基本语法</h2><p>以Hello world为例</p>
+<div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#1-前言">1 前言</a></li>
+<li><a href="#2-swift">2 Swift</a><ul>
+<li><a href="#21-基本语法">2.1 基本语法</a><ul>
+<li><a href="#211-引入">2.1.1 引入</a></li>
+<li><a href="#212-注释">2.1.2 注释</a></li>
+<li><a href="#213分号">2.1.3分号</a></li>
+<li><a href="#214关键字">2.1.4关键字</a></li>
+<li><a href="#215空格">2.1.5空格</a></li>
+<li><a href="#216-标识符">2.1.6 标识符</a></li>
+<li><a href="#217-数据类型">2.1.7 数据类型</a></li>
+<li><a href="#218-类型别名">2.1.8 类型别名</a></li>
+<li><a href="#219-声明">2.1.9 声明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h1><span id="1-前言">1 前言</span></h1><p>本文以未接触过Swift, OC, iOS开发为背景从零开始，学习Swift语法以及iOS程序开发。</p>
+<h1><span id="2-swift">2 Swift</span></h1><h2><span id="21-基本语法">2.1 基本语法</span></h2><p>以Hello world为例</p>
 <pre><code class="swift">import Cocoa
 //Swift基本语法
 var String = &quot;Hello World&quot;
 print(String)</code></pre>
-<h3 id="2-1-1-引入"><a href="#2-1-1-引入" class="headerlink" title="2.1.1 引入"></a>2.1.1 引入</h3><p>import引入OC框架或者C库.</p>
-<h3 id="2-1-2-注释"><a href="#2-1-2-注释" class="headerlink" title="2.1.2 注释"></a>2.1.2 注释</h3><p>单行注释:</p>
+<h3><span id="211-引入">2.1.1 引入</span></h3><p>import引入OC框架或者C库.</p>
+<h3><span id="212-注释">2.1.2 注释</span></h3><p>单行注释:</p>
 <p>//单行注释</p>
 <p>多行注释:</p>
 <p>/*第一行注释</p>
 <p>第二行注释*/</p>
-<h3 id="2-1-3分号"><a href="#2-1-3分号" class="headerlink" title="2.1.3分号"></a>2.1.3分号</h3><p>Swift不要求单行语句以分号结尾,但是多条语句在一行需要分号相隔</p>
-<h3 id="2-1-4关键字"><a href="#2-1-4关键字" class="headerlink" title="2.1.4关键字"></a>2.1.4关键字</h3><p>略</p>
-<h3 id="2-1-5空格"><a href="#2-1-5空格" class="headerlink" title="2.1.5空格"></a>2.1.5空格</h3><p><strong>运算符不能跟在变量常量后</strong></p>
-<h3 id="2-1-6-标识符"><a href="#2-1-6-标识符" class="headerlink" title="2.1.6 标识符"></a>2.1.6 标识符</h3><p>区分大小写</p>
+<h3><span id="213分号">2.1.3分号</span></h3><p>Swift不要求单行语句以分号结尾,但是多条语句在一行需要分号相隔</p>
+<h3><span id="214关键字">2.1.4关键字</span></h3><p>略</p>
+<h3><span id="215空格">2.1.5空格</span></h3><p><strong>运算符不能跟在变量常量后</strong></p>
+<h3><span id="216-标识符">2.1.6 标识符</span></h3><p>区分大小写</p>
 <p>可以以下划线_字母开始,不能以数字开始</p>
 <p>可以使用简单Unicode字符</p>
 <p>使用关键字作为标识符,在前后添加`</p>
-<h3 id="2-1-7-数据类型"><a href="#2-1-7-数据类型" class="headerlink" title="2.1.7 数据类型"></a>2.1.7 数据类型</h3><p><strong>Int</strong> 整数(长度与平台字长相同)</p>
+<h3><span id="217-数据类型">2.1.7 数据类型</span></h3><p><strong>Int</strong> 整数(长度与平台字长相同)</p>
 <p><strong>UInt</strong> 无符号整数(长度与平台字长相同)</p>
 <p><strong>Float Double</strong> 32位浮点数, 64位浮点数,默认使用Double</p>
 <p><strong>Bool</strong> 布尔值, 布尔常量true, false</p>
 <p><strong>String</strong> 字符串</p>
 <p><strong>Character</strong> 字符(单个字母)</p>
 <p><strong>Optional</strong> 可选类型</p>
-<h3 id="2-1-8-类型别名"><a href="#2-1-8-类型别名" class="headerlink" title="2.1.8 类型别名"></a>2.1.8 类型别名</h3><pre><code class="swift">typealias aliasname = Int
+<h3><span id="218-类型别名">2.1.8 类型别名</span></h3><pre><code class="swift">typealias aliasname = Int
 var number: aliasname = 10</code></pre>
 <p>typealias关键字将aliasname(自定)设为Int类型的别名</p>
-<h3 id="2-1-9-声明"><a href="#2-1-9-声明" class="headerlink" title="2.1.9 声明"></a>2.1.9 声明</h3><p>var声明变量 let声明常量</p>
+<h3><span id="219-声明">2.1.9 声明</span></h3><p>var声明变量 let声明常量</p>
 <pre><code class="swift">var number1 = 10
 var number2: Int = 10
 var number3: Int
@@ -270,7 +296,7 @@ number3 = 10
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1606092012306"></script>
+<script src="/js/app.js?v=1606094735509"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
