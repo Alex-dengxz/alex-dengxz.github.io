@@ -81,3 +81,6 @@ deploy:
   type: git
   repo: https://github.com/Alex-dengxz/alex-dengxz.github.io.git
 
+toc:
+  maxdepth: 3
+  class: toc
