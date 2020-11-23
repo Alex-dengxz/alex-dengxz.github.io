@@ -20,7 +20,8 @@
 <meta property="og:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png">
-<meta property="og:updated_time" content="2020-11-23T01:41:13.935Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png">
+<meta property="og:updated_time" content="2020-11-23T01:48:05.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速搭建一个基于github+hexo的博客">
 <meta name="twitter:description" content="通过github和hexo，快速搭建一个属于自己的个人博客">
@@ -32,7 +33,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1606095682753">
+  <link rel="stylesheet" href="/css/style.css?v=1606096097814">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -255,12 +256,8 @@ npm install</code></pre>
 <p>将其中的XXX替换为你的github username</p>
 <p>当然 <em>XXX.github.io</em> 只是代表要生成的文件夹，也可以命名为其他名字，不过建议如此。</p>
 <p>现在，在你的 <em>~/</em> 目录下就多了一个 <em>XXX.github.io</em> 的文件夹了，这个目录中就装着你关于个人主页的配置。</p>
-<p>[查看目录结构](#7.3 主题配置)</p>
-<h3><span id="32-第一次生成静态页面">3.2 第一次生成静态页面</span></h3><p>现在你并没有拥有一个博客页面，只有当你通过Hexo生成一个静态页面后，你才能拥有一个初始的博客页面。</p>
-<pre><code class="bash">hexo clean
-hexo g</code></pre>
-<p><em>hexo g</em> 是 <em>hexo generate(生成)</em> 的缩写，<em>hexo clean</em> 也可以缩写为 <em>hexo cl</em>。</p>
-<h3><span id="33-本地运行">3.3 本地运行</span></h3><pre><code class="bash">hexo s</code></pre>
+<p><a href="/2019/09/19/快速搭建一个基于github与hexo的博客/" title="7.3 主题配置}</p> <p>[查看目录结构](#7.3 主题配置)</p> <h3 id=3-2-第一次生成静态页面><a href=#3-2-第一次生成静态页面 class=headerlink title=3.2 第一次生成静态页面></a>3.2 第一次生成静态页面</h3><p>现在你并没有拥有一个博客页面，只有当你通过Hexo生成一个静态页面后，你才能拥有一个初始的博客页面。</p> <pre><code class=" bash">hexo clean
+hexo g <p><em>hexo g</em> 是 <em>hexo generate(生成)</em> 的缩写，<em>hexo clean</em> 也可以缩写为 <em>hexo cl</em>。</p> <h3><span id="33-本地运行">3.3 本地运行</span></h3><pre><code class="bash">hexo s</code></pre>
 <p><em>hero s</em> 是 <em>hexo server</em> 的缩写，通过这行指令，可以在本地搭建一个临时服务器，默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
 <p>此时访问应该可以看到如下画面：</p>
 <p><img src="https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png" alt="hexo-s.png"></p>
@@ -269,49 +266,26 @@ hexo g</code></pre>
 <p><strong>⚠️：这里的XXX是你的GitHub username，这个库名必须按照这个格式，且必须为新建库（不能更改库名）</strong></p>
 <p>当你启用GitHub page功能时，GitHub会为你分配一个XXX.github.io的域名，为了防止被滥用，因此每个用户只能根据用户名创建一个page（事实上，你确实可以创建任意多且任意名称的库并开启github page，但是因为你只能有一个个人页面，其他的所有都只能作为项目主页，你需要为项目主页准备一个单独的域名才能使用它)，并且如果更改了github username，这个域名也就失效了。</p>
 <h3><span id="42-本地配置">4.2 本地配置</span></h3><p>首先安装 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a></p>
-<pre><code class="bash">npm install hexo-deployer-git --save</code></pre>
-<p>然后进入 XXX.github.io 文件夹，找到 <em>_config.yml</em> 并编辑</p>
-<p>在其中的deploy一项中进行更改：</p>
-<pre><code class="bash">deploy:
+<pre><code class="bash">npm install hexo-deployer-git --save</code></pre> <p>然后进入 XXX.github.io 文件夹，找到 <em>_config.yml</em> 并编辑</p> <p>在其中的deploy一项中进行更改：</p> <pre><code class="bash">deploy:
     type: git
-    repo: [repo]</code></pre>
-<blockquote>
-<p>[repo]替换为<a href="https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub" target="_blank" rel="noopener">https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub</a> username</p>
-<p><strong>⚠️：冒号(:)后一定要跟一个空格</strong></p>
-</blockquote>
-<h3><span id="43-部署">4.3 部署</span></h3><p>退出编辑后在 <em>XXX.github.io</em> 文件夹中执行：</p>
-<pre><code class="bash">hexo d</code></pre>
+    repo: [repo]</code></pre> <blockquote> <p>[repo]替换为<a href="https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub" target="_blank" rel="noopener">https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub</a> username</p> <p><strong>⚠️：冒号(:)后一定要跟一个空格</strong></p> </blockquote> <h3><span id="43-部署">4.3 部署</span></h3><p>退出编辑后在 <em>XXX.github.io</em> 文件夹中执行：</p> <pre><code class="bash">hexo d</code></pre>
 <p><em>hexo d</em> 是 <em>hexo deploy(部署)</em> 的缩写，执行之后，hexo 会将之前 <em>hexo g</em> 生成的静态页面给上传到你GitHub的 <em>XXX.github.io</em> 库的<em>master</em>分支中，GitHub page只只支持<em>master</em>分支和其他少数几个分支，因此不要上传到其他分支。</p>
 <h3><span id="44-开启github-page-及绑定域名">4.4 开启github page 及绑定域名</span></h3><p>在github中进入XXX.github.io库进行管理，在设置中，向下划到倒数第二大类：github page 中，在Source中选中 <em>master branch</em> ，如果你有域名，只需要在下面的 Custom domain中输入属于你的域名并保存，github就会自动为你的域名设置解析。</p>
 <p>部分情况下，需要手动到域名提供商进行域名的dns解析设置。</p>
 <p>到现在，你就可以在<em>XXX.github.io</em>访问到初始的博客页面了。</p>
 <h2><span id="5-发布文章">5 发布文章</span></h2><p>有两种方式可以为你的博客新增文章，</p>
-<pre><code class="bash">hexo new [article]</code></pre>
-<p>或者直接在你的 <em>~/XXX.github.io/source/_posts</em> 文件夹中新建名字为<em>article.md</em>的文件。</p>
-<p>之后只要用markdown语法来完成你的文章就好了。</p>
-<p>不过发布了之后，别忘了在完成编辑后执行hexo命令：</p>
-<pre><code class="bash">hexo clean
+<pre><code class="bash">hexo new [article]</code></pre> <p>或者直接在你的 <em>~/XXX.github.io/source/_posts</em> 文件夹中新建名字为<em>article.md</em>的文件。</p> <p>之后只要用markdown语法来完成你的文章就好了。</p> <p>不过发布了之后，别忘了在完成编辑后执行hexo命令：</p> <pre><code class="bash">hexo clean
 hexo g
-hexo d</code></pre>
-<p>当你发布之后，如果你刷新网页没有变化，可能是你本地的浏览器缓存问题，清除浏览器缓存就好了。</p>
-<h2><span id="6-配置">6 配置</span></h2><p>你可以在<em>_config.yml*中修改Hexo为你预设的博客属性，或者你也可以在</em>~/XXX.github.io/themes/[themename]/中更近一步修改你的博客布局。</p>
-<p>部分<em>_config.yml</em>中的设置会被你的主题中的设置所覆盖，具体需要阅读<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">Hexo官方文档</a>与对应的主题文档。</p>
-<blockquote>
-<p><strong>⚠️：冒号(:)后一定要跟一个空格</strong>，否则会在<code>hexo g</code>时报错</p>
-</blockquote>
-<p>以下是一些 <em>_config.yml</em> 比较重要的设置项</p>
-<h3><span id="61-site">6.1 Site</span></h3><pre><code class="bash">title:              #标题
+hexo d</code></pre> <p>当你发布之后，如果你刷新网页没有变化，可能是你本地的浏览器缓存问题，清除浏览器缓存就好了。</p> <h2><span id="6-配置">6 配置</span></h2><p>你可以在<em>_config.yml*中修改Hexo为你预设的博客属性，或者你也可以在</em>~/XXX.github.io/themes/[themename]/中更近一步修改你的博客布局。</p> <p>部分<em>_config.yml</em>中的设置会被你的主题中的设置所覆盖，具体需要阅读<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">Hexo官方文档</a>与对应的主题文档。</p> <blockquote> <p><strong>⚠️：冒号(:)后一定要跟一个空格</strong>，否则会在<code>hexo g</code>时报错</p> </blockquote> <p>以下是一些 <em>_config.yml</em> 比较重要的设置项</p> <h3><span id="61-site">6.1 Site</span></h3><pre><code class="bash">title:              #标题
 subtitle:           #副标题
 description:        #描述，用于搜索引擎检索
 keywords:           #关键字，用于搜索引擎检索
 author:             #作者昵称
 language:           #简体中文zh-Hans 默认为英文en
-timezone:           #通常情况下可以省略（hexo默认以你本地市区作为博客时区)</code></pre>
-<h3><span id="62-url">6.2 URL</span></h3><pre><code class="bash">url:                                    #网站网址，有域名天蝎域名
+timezone:           #通常情况下可以省略（hexo默认以你本地市区作为博客时区)</code></pre> <h3><span id="62-url">6.2 URL</span></h3><pre><code class="bash">url:                                    #网站网址，有域名天蝎域名
 root: /                                 #文章根目录
 permalink: :year/:month/:day/:title/    #博客自页面链接格式
-permalink_defaults:                     #永久链接中每个段的默认值</code></pre>
-<h3><span id="63-extensions">6.3 Extensions</span></h3><pre><code class="bash">theme:              #默认为landscape,之后更改为你所要替换的主题名，</code></pre>
+permalink_defaults:                     #永久链接中每个段的默认值</code></pre> <h3><span id="63-extensions">6.3 Extensions</span></h3><pre><code class="bash">theme:              #默认为landscape,之后更改为你所要替换的主题名，</code></pre>
 <h2><span id="7-主题">7 主题</span></h2><p>现在你的博客已经可以成功的上传文章并访问了，但是，你是不是觉得太过于单调又丑陋了一些呢？那么，为你的博客替换一个主题就很重要了。</p>
 <p>我的主题是：<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener">nexmoe</a></p>
 <p>我也曾用过:  <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">icarus</a></p>
@@ -353,55 +327,112 @@ permalink_defaults:                     #永久链接中每个段的默认值</c
     │         └───css
     │         └───js
     └───theme_name              #其他主题文件夹
-</code></pre>
-<p>这其中最重要的两个配置文件就是</p>
-<p><code>~/XXX.github.io/_config.yml</code>和<code>~/XXX.github.io/themes/theme_name/_config.yml</code></p>
-<p>分别代表全局配置和主题配置，其中主题配置的优先级更高。</p>
-<p>要配置主题请仔细阅读主题相关文档，本博客采用<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener">nexmoe</a>主题，不会在本文中介绍nexmoe的配置，后续应该会写一篇更深度定制化的博客文章。</p>
-<h2><span id="8-备份">8 备份</span></h2><p>不管你的博客在哪里搭建，又一个很重要的事情就是备份。</p>
-<p>你可能会想：不是已经把博客上传到了github上吗？</p>
-<p>是的，虽然github上已经有了你的博客，但是那只是你本地生成上传的一个静态网页，而你真正的内容，还保留在你的电脑/服务器中。</p>
-<p>当然，你可以把本地文件拷贝到你的移动硬盘、云盘中，不过还有一个更好的方法：上传到github中</p>
-<h3><span id="81-删除对主题文件夹的跟踪">8.1 删除对主题文件夹的跟踪</span></h3><blockquote>
-<p>如果你使用的初始主题可以忽视</p>
-</blockquote>
-<p>在你的hexo文件夹下，又一个主题文件夹是从github上克隆下来的，在不取消对这个文件夹的跟踪时，想要将文件夹上传到自己的github库是一个很麻烦的事情。</p>
-<blockquote>
-<p>跟踪指的就是对文件夹保留git信息，以便于版本更新</p>
-</blockquote>
-<pre><code class="bash">cd ~/XXX.github.io/themes/themename/
-git rm --cached .</code></pre>
-<h3><span id="82-进入新的hexo分支">8.2 进入新的hexo分支</span></h3><p>在第一次上传后，本地已经存在一个<code>master</code>分支，这个分支时用来存储静态网站，而现在就要创建一个用于存储文件的hexo分支（可以任意命名）</p>
-<pre><code class="bash">git checkout -b hexo</code></pre>
+</code></pre> <p>这其中最重要的两个配置文件就是</p> <p><code>~/XXX.github.io/_config.yml</code>和<code>~/XXX.github.io/themes/theme_name/_config.yml</code></p> <p>分别代表全局配置和主题配置，其中主题配置的优先级更高。</p> <p>要配置主题请仔细阅读主题相关文档，本博客采用<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener">nexmoe</a>主题，不会在本文中介绍nexmoe的配置，后续应该会写一篇更深度定制化的博客文章。</p> <h2><span id="8-备份">8 备份</span></h2><p>不管你的博客在哪里搭建，又一个很重要的事情就是备份。</p> <p>你可能会想：不是已经把博客上传到了github上吗？</p> <p>是的，虽然github上已经有了你的博客，但是那只是你本地生成上传的一个静态网页，而你真正的内容，还保留在你的电脑/服务器中。</p> <p>当然，你可以把本地文件拷贝到你的移动硬盘、云盘中，不过还有一个更好的方法：上传到github中</p> <h3><span id="81-删除对主题文件夹的跟踪">8.1 删除对主题文件夹的跟踪</span></h3><blockquote> <p>如果你使用的初始主题可以忽视</p> </blockquote> <p>在你的hexo文件夹下，又一个主题文件夹是从github上克隆下来的，在不取消对这个文件夹的跟踪时，想要将文件夹上传到自己的github库是一个很麻烦的事情。</p> <blockquote> <p>跟踪指的就是对文件夹保留git信息，以便于版本更新</p> </blockquote> <pre><code class="bash">cd ~/XXX.github.io/themes/themename/
+git rm --cached .</code></pre> <h3><span id="82-进入新的hexo分支">8.2 进入新的hexo分支</span></h3><p>在第一次上传后，本地已经存在一个<code>master</code>分支，这个分支时用来存储静态网站，而现在就要创建一个用于存储文件的hexo分支（可以任意命名）</p> <pre><code class="bash">git checkout -b hexo</code></pre>
 <p>你可以创建一个.gitignore来将一些不想备份的文件屏蔽。</p>
 <h3><span id="83-开始备份">8.3 开始备份</span></h3><pre><code class="bash">cd ~/XXX.github.io/
 git add .
 git commit -m &quot;Backup&quot;
-git push origin hexo</code></pre>
-<h3><span id="84-设置默认分支">8.4 设置默认分支</span></h3><p>在你上传后，github中会增加一个新的分支，但是你打开库默认显示的是你之前上传的静态页面，可以在设置中将默认分支改为hexo，这样在恢复时更加方便。</p>
-<h3><span id="85-从备份中恢复">8.5 从备份中恢复</span></h3><pre><code class="bash">git clone https://github.com/XXX/XXX.github.io
+git push origin hexo</code></pre> <h3><span id="84-设置默认分支">8.4 设置默认分支</span></h3><p>在你上传后，github中会增加一个新的分支，但是你打开库默认显示的是你之前上传的静态页面，可以在设置中将默认分支改为hexo，这样在恢复时更加方便。</p> <h3><span id="85-从备份中恢复">8.5 从备份中恢复</span></h3><pre><code class="bash">git clone https://github.com/XXX/XXX.github.io
 cd XXX.github.io
 npm install hexo-cli
 npm install
-npm install hexo-deployer-git</code></pre>
-<p>这样就可以从一台新的电脑继续开始更新博客，而不用重新配置了。</p>
-<h2><span id="9-其他">9 其他</span></h2><h3><span id="91-保存域名">9.1 保存域名</span></h3><p>在你完成上述操作并更新一次后，你会发现：你无法通过你的域名访问你的博客了，这是怎么回事？</p>
-<p>原来，在你更新后，GitHub Pages 解除了和域名的绑定，你当然可以每次更新后都重复[4.4 绑定域名](#4.4 开启github page 及绑定域名)的操作，但是这样太过沙雕。</p>
-<p>想要一次解决，只需要在 <em>~/XXX.github.io/source/</em> 中添加一个名字为 <em>CNAME</em> 的文档，内容为你的域名地址就好了。</p>
-<h3><span id="92-一键更新">9.2 一键更新</span></h3><p>是不是觉得每次更新博客都非常麻烦，要是输指令的顺序错了，还可能有不好的后果，那么，写一个脚本来一键完成这个步骤就非常适合你了。</p>
-<p>在任意地方（推荐 <em>~/XXX.github.io/</em> 中）创建一个update.sh的文件</p>
-<pre><code class="bash">#!/bin/bash
+npm install hexo-deployer-git</code></pre> <p>这样就可以从一台新的电脑继续开始更新博客，而不用重新配置了。</p> <h2><span id="9-其他">9 其他</span></h2><h3><span id="91-保存域名">9.1 保存域名</span></h3><p>在你完成上述操作并更新一次后，你会发现：你无法通过你的域名访问你的博客了，这是怎么回事？</p> <p>原来，在你更新后，GitHub Pages 解除了和域名的绑定，你当然可以每次更新后都重复[4.4 绑定域名](#4.4 开启github page 及绑定域名)的操作，但是这样太过沙雕。</p> <p>想要一次解决，只需要在 <em>~/XXX.github.io/source/</em> 中添加一个名字为 <em>CNAME</em> 的文档，内容为你的域名地址就好了。</p> <h3><span id="92-一键更新">9.2 一键更新</span></h3><p>是不是觉得每次更新博客都非常麻烦，要是输指令的顺序错了，还可能有不好的后果，那么，写一个脚本来一键完成这个步骤就非常适合你了。</p> <p>在任意地方（推荐 <em>~/XXX.github.io/</em> 中）创建一个update.sh的文件</p> <pre><code class="bash">#!/bin/bash
 
 hexo clean
 hexo g
 hexo d
 git add .
 git commit -m &quot;Backup&quot;
-git push origin hexo</code></pre>
-<p>保存后为文件添加执行权限：</p>
-<pre><code class="bash">chmod 777 ./update.sh</code></pre>
-<p>然后以后的每次更新就可一通过：<code>~/XXX.github.io/update.sh</code>来执行了。</p>
+git push origin hexo</code></pre> <p>保存后为文件添加执行权限：</p> <pre><code class="bash">chmod 777 ./update.sh</code></pre> <p>然后以后的每次更新就可一通过：<code>~/XXX.github.io/update.sh</code>来执行了。</p>">7.3 主题配置}</a></p> <p>[查看目录结构](#7.3 主题配置)</p> <h3><span id="32-第一次生成静态页面">3.2 第一次生成静态页面</span></h3><p>现在你并没有拥有一个博客页面，只有当你通过Hexo生成一个静态页面后，你才能拥有一个初始的博客页面。</p> <pre><code class="bash">hexo clean
+hexo g</code></pre> <p><em>hexo g</em> 是 <em>hexo generate(生成)</em> 的缩写，<em>hexo clean</em> 也可以缩写为 <em>hexo cl</em>。</p> <h3><span id="33-本地运行">3.3 本地运行</span></h3><pre><code class="bash">hexo s</code></pre>
+<p><em>hero s</em> 是 <em>hexo server</em> 的缩写，通过这行指令，可以在本地搭建一个临时服务器，默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<p>此时访问应该可以看到如下画面：</p>
+<p><img src="https://i.loli.net/2019/09/21/LEGBb8rwPo7W3p5.png" alt="hexo-s.png"></p>
+<p>但是你并不能在其他的网络中访问到这个博客页面，因此，你需要github来作为你的服务器。</p>
+<h2><span id="4-使用github-page-部署">4 使用GitHub page 部署</span></h2><h3><span id="41-创建库">4.1 创建库</span></h3><p>首先，登录你的GitHub账号，新建一个库，命名为XXX.github.io</p>
+<p><strong>⚠️：这里的XXX是你的GitHub username，这个库名必须按照这个格式，且必须为新建库（不能更改库名）</strong></p>
+<p>当你启用GitHub page功能时，GitHub会为你分配一个XXX.github.io的域名，为了防止被滥用，因此每个用户只能根据用户名创建一个page（事实上，你确实可以创建任意多且任意名称的库并开启github page，但是因为你只能有一个个人页面，其他的所有都只能作为项目主页，你需要为项目主页准备一个单独的域名才能使用它)，并且如果更改了github username，这个域名也就失效了。</p>
+<h3><span id="42-本地配置">4.2 本地配置</span></h3><p>首先安装 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a></p>
+<pre><code class="bash">npm install hexo-deployer-git --save</code></pre> <p>然后进入 XXX.github.io 文件夹，找到 <em>_config.yml</em> 并编辑</p> <p>在其中的deploy一项中进行更改：</p> <pre><code class="bash">deploy:
+    type: git
+    repo: [repo]</code></pre> <blockquote> <p>[repo]替换为<a href="https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub" target="_blank" rel="noopener">https://github.com/XXX/XXX.github.io，其中XXX是你的GitHub</a> username</p> <p><strong>⚠️：冒号(:)后一定要跟一个空格</strong></p> </blockquote> <h3><span id="43-部署">4.3 部署</span></h3><p>退出编辑后在 <em>XXX.github.io</em> 文件夹中执行：</p> <pre><code class="bash">hexo d</code></pre>
+<p><em>hexo d</em> 是 <em>hexo deploy(部署)</em> 的缩写，执行之后，hexo 会将之前 <em>hexo g</em> 生成的静态页面给上传到你GitHub的 <em>XXX.github.io</em> 库的<em>master</em>分支中，GitHub page只只支持<em>master</em>分支和其他少数几个分支，因此不要上传到其他分支。</p>
+<h3><span id="44-开启github-page-及绑定域名">4.4 开启github page 及绑定域名</span></h3><p>在github中进入XXX.github.io库进行管理，在设置中，向下划到倒数第二大类：github page 中，在Source中选中 <em>master branch</em> ，如果你有域名，只需要在下面的 Custom domain中输入属于你的域名并保存，github就会自动为你的域名设置解析。</p>
+<p>部分情况下，需要手动到域名提供商进行域名的dns解析设置。</p>
+<p>到现在，你就可以在<em>XXX.github.io</em>访问到初始的博客页面了。</p>
+<h2><span id="5-发布文章">5 发布文章</span></h2><p>有两种方式可以为你的博客新增文章，</p>
+<pre><code class="bash">hexo new [article]</code></pre> <p>或者直接在你的 <em>~/XXX.github.io/source/_posts</em> 文件夹中新建名字为<em>article.md</em>的文件。</p> <p>之后只要用markdown语法来完成你的文章就好了。</p> <p>不过发布了之后，别忘了在完成编辑后执行hexo命令：</p> <pre><code class="bash">hexo clean
+hexo g
+hexo d</code></pre> <p>当你发布之后，如果你刷新网页没有变化，可能是你本地的浏览器缓存问题，清除浏览器缓存就好了。</p> <h2><span id="6-配置">6 配置</span></h2><p>你可以在<em>_config.yml*中修改Hexo为你预设的博客属性，或者你也可以在</em>~/XXX.github.io/themes/[themename]/中更近一步修改你的博客布局。</p> <p>部分<em>_config.yml</em>中的设置会被你的主题中的设置所覆盖，具体需要阅读<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">Hexo官方文档</a>与对应的主题文档。</p> <blockquote> <p><strong>⚠️：冒号(:)后一定要跟一个空格</strong>，否则会在<code>hexo g</code>时报错</p> </blockquote> <p>以下是一些 <em>_config.yml</em> 比较重要的设置项</p> <h3><span id="61-site">6.1 Site</span></h3><pre><code class="bash">title:              #标题
+subtitle:           #副标题
+description:        #描述，用于搜索引擎检索
+keywords:           #关键字，用于搜索引擎检索
+author:             #作者昵称
+language:           #简体中文zh-Hans 默认为英文en
+timezone:           #通常情况下可以省略（hexo默认以你本地市区作为博客时区)</code></pre> <h3><span id="62-url">6.2 URL</span></h3><pre><code class="bash">url:                                    #网站网址，有域名天蝎域名
+root: /                                 #文章根目录
+permalink: :year/:month/:day/:title/    #博客自页面链接格式
+permalink_defaults:                     #永久链接中每个段的默认值</code></pre> <h3><span id="63-extensions">6.3 Extensions</span></h3><pre><code class="bash">theme:              #默认为landscape,之后更改为你所要替换的主题名，</code></pre>
+<h2><span id="7-主题">7 主题</span></h2><p>现在你的博客已经可以成功的上传文章并访问了，但是，你是不是觉得太过于单调又丑陋了一些呢？那么，为你的博客替换一个主题就很重要了。</p>
+<p>我的主题是：<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener">nexmoe</a></p>
+<p>我也曾用过:  <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">icarus</a></p>
+<h3><span id="71-寻找主题">7.1 寻找主题</span></h3><p><strong>推荐：</strong>你可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方页面</a>中挑选你所想要的主题。(上述两者也都可以在官方页面中找到)</p>
+<p>也可以在搜索引擎中查找主题，大部分的主题都是保存在github下的，因此，在github中搜索hexo theme也是一个不错的方法。</p>
+<p>还有一种方法：当你身边有朋友在使用hexo时，通常可以在他的博客底部看到一行：Powered by Hexo &amp; Themename, 这时你就可以选择一个和你朋友相同的主题了。</p>
+<h3><span id="72-安装主题">7.2 安装主题</span></h3><p>进入主题的github页面，然后将其克隆到本地的 <em>~/XXX.github.io/themes/</em> 中，注意，大部分的主题以 <em>hexo-theme-name</em> 格式命名，你在克隆时需要改名为<em>name</em>.</p>
+<p>现在，在你的themes文件夹中就会多一个主题文件夹了，当你在<em>_config.yml</em>中将theme更改为当前主题名，就启用了这个主题。</p>
+<h3><span id="73-主题配置">7.3 主题配置</span></h3><p>首先介绍一下hexo的配置：</p>
+<pre><code class="bash">.
+│   _config.yml                 #官方配置文件
+│   package-lock.json           #包依赖
+│   package.json                #包依赖
+│    
+└───node_modules
+│   │ 
+│   ...
+│
+└───scaffolds                   #默认的文章生成前缀
+│   │
+│   │   draft.md               
+│   │   page.md
+│   │   post.md                 #hexo new默认生成post文章
+│
+└───source                      #博客的内容
+│   │
+│   └───_posts                  #文章存放位置
+│   └───_images                 #自行添加，存放图片
+│   
+└───themes                      #主题文件夹
+    │
+    └───landscape               #默认主题，这里用来举例
+    │   │
+    │   │   _config.yml         #主题配置文件，会替换掉官方配置对应项
+    │   │
+    │   └───layout              #配置博客布局的脚本
+    │   └───source              #存放css和js配置文件
+    │         │
+    │         └───css
+    │         └───js
+    └───theme_name              #其他主题文件夹
+</code></pre> <p>这其中最重要的两个配置文件就是</p> <p><code>~/XXX.github.io/_config.yml</code>和<code>~/XXX.github.io/themes/theme_name/_config.yml</code></p> <p>分别代表全局配置和主题配置，其中主题配置的优先级更高。</p> <p>要配置主题请仔细阅读主题相关文档，本博客采用<a href="https://github.com/nexmoe/hexo-theme-nexmoe" target="_blank" rel="noopener">nexmoe</a>主题，不会在本文中介绍nexmoe的配置，后续应该会写一篇更深度定制化的博客文章。</p> <h2><span id="8-备份">8 备份</span></h2><p>不管你的博客在哪里搭建，又一个很重要的事情就是备份。</p> <p>你可能会想：不是已经把博客上传到了github上吗？</p> <p>是的，虽然github上已经有了你的博客，但是那只是你本地生成上传的一个静态网页，而你真正的内容，还保留在你的电脑/服务器中。</p> <p>当然，你可以把本地文件拷贝到你的移动硬盘、云盘中，不过还有一个更好的方法：上传到github中</p> <h3><span id="81-删除对主题文件夹的跟踪">8.1 删除对主题文件夹的跟踪</span></h3><blockquote> <p>如果你使用的初始主题可以忽视</p> </blockquote> <p>在你的hexo文件夹下，又一个主题文件夹是从github上克隆下来的，在不取消对这个文件夹的跟踪时，想要将文件夹上传到自己的github库是一个很麻烦的事情。</p> <blockquote> <p>跟踪指的就是对文件夹保留git信息，以便于版本更新</p> </blockquote> <pre><code class="bash">cd ~/XXX.github.io/themes/themename/
+git rm --cached .</code></pre> <h3><span id="82-进入新的hexo分支">8.2 进入新的hexo分支</span></h3><p>在第一次上传后，本地已经存在一个<code>master</code>分支，这个分支时用来存储静态网站，而现在就要创建一个用于存储文件的hexo分支（可以任意命名）</p> <pre><code class="bash">git checkout -b hexo</code></pre>
+<p>你可以创建一个.gitignore来将一些不想备份的文件屏蔽。</p>
+<h3><span id="83-开始备份">8.3 开始备份</span></h3><pre><code class="bash">cd ~/XXX.github.io/
+git add .
+git commit -m &quot;Backup&quot;
+git push origin hexo</code></pre> <h3><span id="84-设置默认分支">8.4 设置默认分支</span></h3><p>在你上传后，github中会增加一个新的分支，但是你打开库默认显示的是你之前上传的静态页面，可以在设置中将默认分支改为hexo，这样在恢复时更加方便。</p> <h3><span id="85-从备份中恢复">8.5 从备份中恢复</span></h3><pre><code class="bash">git clone https://github.com/XXX/XXX.github.io
+cd XXX.github.io
+npm install hexo-cli
+npm install
+npm install hexo-deployer-git</code></pre> <p>这样就可以从一台新的电脑继续开始更新博客，而不用重新配置了。</p> <h2><span id="9-其他">9 其他</span></h2><h3><span id="91-保存域名">9.1 保存域名</span></h3><p>在你完成上述操作并更新一次后，你会发现：你无法通过你的域名访问你的博客了，这是怎么回事？</p> <p>原来，在你更新后，GitHub Pages 解除了和域名的绑定，你当然可以每次更新后都重复[4.4 绑定域名](#4.4 开启github page 及绑定域名)的操作，但是这样太过沙雕。</p> <p>想要一次解决，只需要在 <em>~/XXX.github.io/source/</em> 中添加一个名字为 <em>CNAME</em> 的文档，内容为你的域名地址就好了。</p> <h3><span id="92-一键更新">9.2 一键更新</span></h3><p>是不是觉得每次更新博客都非常麻烦，要是输指令的顺序错了，还可能有不好的后果，那么，写一个脚本来一键完成这个步骤就非常适合你了。</p> <p>在任意地方（推荐 <em>~/XXX.github.io/</em> 中）创建一个update.sh的文件</p> <pre><code class="bash">#!/bin/bash
 
+hexo clean
+hexo g
+hexo d
+git add .
+git commit -m &quot;Backup&quot;
+git push origin hexo</code></pre> <p>保存后为文件添加执行权限：</p> <pre><code class="bash">chmod 777 ./update.sh</code></pre> <p>然后以后的每次更新就可一通过：<code>~/XXX.github.io/update.sh</code>来执行了。</p>
   </article>
   
     
@@ -450,7 +481,7 @@ git push origin hexo</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1606095682760"></script>
+<script src="/js/app.js?v=1606096097820"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
