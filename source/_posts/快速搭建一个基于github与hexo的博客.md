@@ -66,7 +66,7 @@ npm install
 
 现在，在你的 *~/* 目录下就多了一个 *XXX.github.io* 的文件夹了，这个目录中就装着你关于个人主页的配置。
 
-{% post_link 快速搭建一个基于github与hexo的博客 7.3 主题配置}
+{% post_link 快速搭建一个基于github与hexo的博客 7.3 主题配置 %}
 
 [查看目录结构](#7.3 主题配置)
 
