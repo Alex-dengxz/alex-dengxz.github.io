@@ -124,3 +124,19 @@ number1没有指定数据类型,swift会自动进行**类型推断**,浮点数�
 
 
 
+### 2.2 可选类型
+
+**swift不会自动为变量赋初始值, 在变量使用之前需要对其初始化**
+
+可选类型即 Optinal类型, 指"变量可能有一个值"
+
+```swift
+var optvar1: Int?
+var optvar2: Int? = 10
+var optvar3: Optional<Int>
+```
+
+其中,optvar1和optvar3是一样的,都是声明了一个Optional类型变量, 这个变量可能包含一个Int类型的值(也可能不包含), 因为没有显式赋值,所以optvar1和optvar2有一个默认值为nil, nil表示这个变量是空的.
+
+optvar2也声明了一个Optinal类型变量,这个变量赋了初值Int类型10.
+
