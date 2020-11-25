@@ -3,7 +3,7 @@ layout: 从零开始学习Swift-> iOS
 title: 从零开始学习Swift-> iOS
 date: 2020-11-23 7:00:00
 categories: 博客
-Cover: images/macOS14.jpeg
+cover: https://sm.ms/image/WJCQ1pfsoTznxEN
 tags: [博客,编程,iOS]
 ---
 
