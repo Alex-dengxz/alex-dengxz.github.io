@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="dengxz&#39;s blog">
 <meta property="og:description" content="从零开始学习Swift-&amp;gt; iOS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-01T13:42:18.396Z">
+<meta property="og:updated_time" content="2020-12-01T18:04:59.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始学习Swift-&gt; iOS">
 <meta name="twitter:description" content="从零开始学习Swift-&amp;gt; iOS">
@@ -30,7 +30,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1606830544085">
+  <link rel="stylesheet" href="/css/style.css?v=1606845973057">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -170,8 +170,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年11月23日</a>
-    <a><i class="nexmoefont icon-areachart"></i>648 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>962 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/博客/">博客</a>
     
@@ -199,6 +199,15 @@
 <li><a href="#218-类型别名">2.1.8 类型别名</a></li>
 <li><a href="#219-声明">2.1.9 声明</a></li>
 <li><a href="#22-可选类型">2.2 可选类型</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-playground">3 Playground</a><ul>
+<li><a href="#31-创建工程">3.1 创建工程</a></li>
+<li><a href="#32-文件结构">3.2 文件结构</a><ul>
+<li><a href="#321-appdelegate">3.2.1 AppDelegate</a></li>
+<li><a href="#322-scenedelegate">3.2.2 SceneDelegate</a></li>
 </ul>
 </li>
 </ul>
@@ -252,6 +261,25 @@ var optvar2: Int? = 10
 var optvar3: Optional&lt;Int&gt;</code></pre>
 <p>其中,optvar1和optvar3是一样的,都是声明了一个Optional类型变量, 这个变量可能包含一个Int类型的值(也可能不包含), 因为没有显式赋值,所以optvar1和optvar2有一个默认值为nil, nil表示这个变量是空的.</p>
 <p>optvar2也声明了一个Optinal类型变量,这个变量赋了初值Int类型10.</p>
+<h1><span id="3-playground">3 Playground</span></h1><h2><span id="31-创建工程">3.1 创建工程</span></h2><p>在xcode中，新建一个工程（文章默认以iOS应用），在life Cycle选择UIKit App Delegate, 语言选择Swift即可。</p>
+<h2><span id="32-文件结构">3.2 文件结构</span></h2><p>新建工程后，呈现在面前一堆文件，那么分别都是些什么作用的？</p>
+<pre><code class="bash">|-XXX //主要文件目录
+  |-AppDelegate.swift           //工程默认入口
+  |-SceneDelegate.swift         //页面默认入口
+  |-ContenView.swift            //SwiftUI用，不使用SwiftUI时建议删除
+  |-Assets.xcassets             //图像资源管理工具
+  |-LaunchScreen.storyboard     //用于页面布局管理
+  |-info.plist                  //工程信息</code></pre>
+<h3><span id="321-appdelegate">3.2.1 AppDelegate</span></h3><p>AppDelegate是新建一个工程后默认的工程入口，类似于C中的main.c.</p>
+<p>@main.c就是程序执行的入口。AppDelegate是app启动后系统调用的第一个类。</p>
+<p>AppDelegate中有3个重要的方法</p>
+<pre><code class="swi">func application(_:didFinishLaunchingWithOptions:) -&gt; Bool
+func application(_:configurationForConnecting:options:) -&gt; UISceneConfiguration
+func application(_:didDiscardSceneSessions:)</code></pre>
+<p>func application(_:didFinishLaunchingWithOptions:) -&gt; Bool ：在程序刚启动的时候调用，用于执行应用程序设置。</p>
+<p>func application(_:configurationForConnecting:options:) -&gt; UISceneConfiguration ：用来调用以获取和创建新的场景。</p>
+<p>func application(_:didDiscardSceneSessions:) ：当用户丢弃一个scene时，就会调用此方法。</p>
+<h3><span id="322-scenedelegate">3.2.2 SceneDelegate</span></h3><p>SceneDelegate用于负责屏幕上显示内容</p>
 
   </article>
   
@@ -301,7 +329,7 @@ var optvar3: Optional&lt;Int&gt;</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1606830544109"></script>
+<script src="/js/app.js?v=1606845973074"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
