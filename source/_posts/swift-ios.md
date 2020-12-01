@@ -145,3 +145,48 @@ var optvar3: Optional<Int>
 
 optvar2也声明了一个Optinal类型变量,这个变量赋了初值Int类型10.
 
+
+
+# 3 Playground
+
+## 3.1 创建工程
+
+在xcode中，新建一个工程（文章默认以iOS应用），在life Cycle选择UIKit App Delegate, 语言选择Swift即可。
+
+## 3.2 文件结构
+
+新建工程后，呈现在面前一堆文件，那么分别都是些什么作用的？
+
+```bash
+|-XXX //主要文件目录
+  |-AppDelegate.swift           //工程默认入口
+  |-SceneDelegate.swift         //页面默认入口
+  |-ContenView.swift            //SwiftUI用，不使用SwiftUI时建议删除
+  |-Assets.xcassets             //图像资源管理工具
+  |-LaunchScreen.storyboard     //用于页面布局管理
+  |-info.plist                  //工程信息
+```
+
+### 3.2.1 AppDelegate
+
+AppDelegate是新建一个工程后默认的工程入口，类似于C中的main.c.
+
+@main.c就是程序执行的入口。AppDelegate是app启动后系统调用的第一个类。
+
+AppDelegate中有3个重要的方法
+
+```swi
+func application(_:didFinishLaunchingWithOptions:) -> Bool
+func application(_:configurationForConnecting:options:) -> UISceneConfiguration
+func application(_:didDiscardSceneSessions:)
+```
+
+func application(_:didFinishLaunchingWithOptions:) -> Bool ：在程序刚启动的时候调用，用于执行应用程序设置。
+
+func application(_:configurationForConnecting:options:) -> UISceneConfiguration ：用来调用以获取和创建新的场景。
+
+func application(_:didDiscardSceneSessions:) ：当用户丢弃一个scene时，就会调用此方法。
+
+### 3.2.2 SceneDelegate
+
+SceneDelegate用于负责屏幕上显示内容
