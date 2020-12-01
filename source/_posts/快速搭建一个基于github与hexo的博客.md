@@ -4,6 +4,7 @@ title: 快速搭建一个基于github+hexo的博客
 date: 2019-09-19 19:29:59
 categories: 博客
 tags: [博客,编程]
+cover: https://i.loli.net/2020/12/01/26gELlfvQ1MjAts.jpg
 ---
 **通过github和hexo，快速搭建一个属于自己的个人博客**
 <!-- more -->
