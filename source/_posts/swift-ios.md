@@ -190,3 +190,16 @@ func application(_:didDiscardSceneSessions:) ：当用户丢弃一个scene时，
 ### 3.2.2 SceneDelegate
 
 SceneDelegate用于负责屏幕上显示内容
+
+```swift
+scene(_:willConnectTo:options:)
+sceneDidDisconnect(_:)
+sceneDidBecomeActive(_:)
+sceneWillResignActive(_:)
+sceneWillEnterForeground(_:)
+sceneDidEnterBackground(_:)
+```
+
+scene(_:willConnectTo:options:) ：是UISceneSession调用的第一个方法，会创建一个初始的视图
+
+sceneDidDisconnect(_:) ：场景在后台不活跃时断开会话执行。此时程序并不一定会被杀死，只有场景会被断开。
