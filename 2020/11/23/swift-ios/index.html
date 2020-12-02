@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="dengxz&#39;s blog">
 <meta property="og:description" content="从零开始学习Swift-&amp;gt; iOS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-01T18:04:59.997Z">
+<meta property="og:updated_time" content="2020-12-02T18:54:25.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始学习Swift-&gt; iOS">
 <meta name="twitter:description" content="从零开始学习Swift-&amp;gt; iOS">
@@ -30,7 +30,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1606845973057">
+  <link rel="stylesheet" href="/css/style.css?v=1606935332721">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -170,7 +170,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年11月23日</a>
-    <a><i class="nexmoefont icon-areachart"></i>962 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/博客/">博客</a>
@@ -280,6 +280,14 @@ func application(_:didDiscardSceneSessions:)</code></pre>
 <p>func application(_:configurationForConnecting:options:) -&gt; UISceneConfiguration ：用来调用以获取和创建新的场景。</p>
 <p>func application(_:didDiscardSceneSessions:) ：当用户丢弃一个scene时，就会调用此方法。</p>
 <h3><span id="322-scenedelegate">3.2.2 SceneDelegate</span></h3><p>SceneDelegate用于负责屏幕上显示内容</p>
+<pre><code class="swift">scene(_:willConnectTo:options:)
+sceneDidDisconnect(_:)
+sceneDidBecomeActive(_:)
+sceneWillResignActive(_:)
+sceneWillEnterForeground(_:)
+sceneDidEnterBackground(_:)</code></pre>
+<p>scene(_:willConnectTo:options:) ：是UISceneSession调用的第一个方法，会创建一个初始的视图</p>
+<p>sceneDidDisconnect(_:) ：场景在后台不活跃时断开会话执行。此时程序并不一定会被杀死，只有场景会被断开。</p>
 
   </article>
   
@@ -329,7 +337,7 @@ func application(_:didDiscardSceneSessions:)</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1606845973074"></script>
+<script src="/js/app.js?v=1606935332736"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
